@@ -7,7 +7,11 @@ OBJECTS= \
 all: $(OBJECTS)
 
 $(OBJECTS):
-		$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $@.c
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $@.c
+
+install:
+	mkdir -p $(PREFIX)/bin
+	install -c -m 755 src/check_graphite $(PREFIX)/bin/check_graphite
 
 .PHONY: clean
 
