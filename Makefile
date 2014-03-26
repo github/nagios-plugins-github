@@ -7,7 +7,7 @@ OBJECTS= \
 all: $(OBJECTS)
 
 $(OBJECTS):
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $@.c
+	$(CC) -o $@ $@.c $(CFLAGS) $(LDFLAGS)
 
 install:
 	mkdir -p $(PREFIX)/bin
