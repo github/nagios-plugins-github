@@ -152,10 +152,9 @@ int main(int argc, char **argv) {
             exit(EXIT_UNKNOWN);
         }
 
-        enum json_tokener_error json_error;
-        json_object *json_targets = json_tokener_parse_verbose(graphite_data.data, &json_error);
+        json_object *json_targets = json_tokener_parse_verbose(graphite_data.data);
         if(json_targets == NULL) {
-            fprintf(stderr, "%s UNKNOWN: JSON parse error - %s\n", name, json_tokener_error_desc(json_error));
+            fprintf(stderr, "%s UNKNOWN: JSON parse error\n", name);
             exit(EXIT_UNKNOWN);
         }
 
