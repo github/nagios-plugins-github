@@ -1,5 +1,5 @@
-CFLAGS=-Wall -Wextra -pedantic -std=c99 -Werror -lcurl $(shell pkg-config --cflags json-c)
-LDFLAGS=$(shell pkg-config --libs json-c)
+CFLAGS=-Wall -Wextra -pedantic -std=c99 -Werror -lcurl $(shell pkg-config --cflags json)
+LDFLAGS=$(shell pkg-config --libs json)
 
 OBJECTS= \
 	src/check_graphite
